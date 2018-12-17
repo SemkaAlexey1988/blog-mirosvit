@@ -1,0 +1,47 @@
+<div class="breadcrumbs" *ngIf="onePost && titleCategory" >
+<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+<li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" itemprop="itemListElement" itemscope
+      itemtype="http://schema.org/ListItem"><a  itemscope itemtype="http://schema.org/Thing"
+       itemprop="item" routerLink="/"><span  itemprop="name">Main </span>  </a> > </li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a  itemscope itemtype="http://schema.org/Thing"
+       itemprop="item" [routerLink]="['/category', titleCategory.id, titleCategory.name | lowercase]"><span  itemprop="name">{{titleCategory.name}} </span> </a> > </li>	
+<li ><span  itemprop="name">{{onePost.title.rendered}}</span></li>
+</ul>
+</div>
+<div class="post" *ngIf="onePost">
+<h1>{{onePost.title.rendered}}</h1>
+<span>{{onePost.date | slice:0:10}}</span>	
+<div [innerHTML]="onePost.content.rendered"></div>
+<div class="comments" *ngIf="listComments">
+<div class="comments_element" *ngFor="let comments of listComments">
+<h3 class="comments_h">{{comments.author_name }}</h3>
+<span class="comments_date">{{comments.date | slice:0:10}}</span>
+<p class="comments_text" [innerHTML]="comments.content.rendered"></p>
+</div>
+</div>
+
+<div class="comments_form">
+	<h3>Add Comment</h3>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
+		<p class="success" *ngIf="messageSuccess">Comment successfully added!</p>	
+		<div class="form-group">
+<label>Name</label>
+<input [ngClass]="{'input-error': form.get('name').invalid && form.get('name').touched}" type="text" class="form-control" placeholder="name" [formControlName]="'name'" [value]="nameValue">	
+<p class="error" *ngIf="form.get('name').invalid && form.get('name').touched">The name field must not be empty</p>	
+		</div>
+		<div class="form-group">
+<label>E-mail</label>
+<input [ngClass]="{'input-error': form.get('email').invalid && form.get('email').touched}" type="text" class="form-control" placeholder="Your e-mail" [formControlName]="'email'" [value]="emailValue">	
+<p class="error" *ngIf="form.get('email').invalid && form.get('email').touched">The e-mail field must not be empty</p>		
+		</div>
+		<div class="form-group">
+<label>Message</label>
+<textarea [ngClass]="{'input-error': form.get('message').invalid && form.get('message').touched}" class="form-control" placeholder="Your message" [formControlName]="'message'" [value]="messageValue"></textarea>
+<p class="error" *ngIf="form.get('message').invalid && form.get('message').touched">The message field must not be empty</p>			
+		</div>		
+<button class="btn btn-success" type="submit" [disabled]="form.invalid">Add comment</button>
+
+	</form>
+</div>
+
+</div>

@@ -1,0 +1,11 @@
+<h1>List of articles</h1>
+
+	<form>
+	<input [(ngModel)]="searchTitle" [ngModelOptions]="{standalone: true}" (click)="clearInput(searchInput)" #searchInput type="text" class="form-control search" placeholder="Search" >
+</form>
+<div class="clear"></div>
+<div *ngFor="let articles of listArticles | filter: searchTitle">
+<h3 class="article-title" (click)="linkTo(articles.id)">{{articles.title.rendered}}</h3>
+<span>{{articles.date | slice:0:10}}</span>	
+<div [innerHTML]="(articles.content.rendered.length>6)? (articles.content.rendered | slice:0:150)+'...':(articles.content.rendered)"></div>
+</div>

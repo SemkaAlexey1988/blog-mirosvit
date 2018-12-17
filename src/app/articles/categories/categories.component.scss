@@ -1,0 +1,15 @@
+.article-title {
+	cursor: pointer;
+}
+.article-title:hover {
+text-decoration: underline;
+}
+
+.search {
+width: 100%;	
+max-width: 280px;
+float: right;
+}
+.clear {
+clear: both;
+}

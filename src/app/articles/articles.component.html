@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="left-block">
+<h4>Categories</h4>
+<ul class="left-menu">
+<li *ngFor="let categories of listCategories"><a [routerLink]="['/category', categories.id, categories.name | lowercase]">{{categories.name}}</a></li>	
+</ul>
+
+		</div>
+		</div>
+		<div class="col-md-9">
+			<div class="center-block">
+  <router-outlet></router-outlet>
+</div>
+  </div>
+</div>
+</div>
+

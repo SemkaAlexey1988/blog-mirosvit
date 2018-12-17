@@ -1,0 +1,36 @@
+.center-block {
+background: #FFFFFF;
+padding: 20px;	
+border: 2px solid #43546e;
+margin-top: 25px;
+margin-bottom: 25px;
+
+}
+
+.left-block {
+padding-top: 30px;
+}
+
+.left-block h4 {
+	text-align: center;
+}
+
+.left-menu {
+	list-style-type: none;
+}
+
+.left-menu li a {
+display: block;
+font-size: 19px;
+color: #bdc0c7;
+line-height: 40px;
+border-bottom: 1px solid #bdc0c7;
+cursor: pointer;
+-webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+}
+.left-menu li a:hover {
+color: red;
+text-decoration: none;
+}
+

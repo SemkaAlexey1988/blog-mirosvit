@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--<img src="../assets/images/1.png" alt="img">-->
+
+
+<div class="site">
+<div class="content">
+<header class="site-header">
+	<div class=top-panel>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<ul class="top-nav">
+<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Main</a></li>
+</ul>
+				</div>
+				<div class="col-md-3">
+<div (clickOutside)="onClickedOutside($event)">
+<a class="mobile-menu_toggle" (click)="toggleMenu(mobileMenu)" ><i class="fas fa-bars"></i></a>					
+<ul id="submitera" class="mobile-menu" [ngClass]="status ? 'activeited' : 'disabled'" #mobileMenu>
+<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Main</a></li>
+<li *ngFor="let categories of listCategories"><a [routerLink]="['/category', categories.id, categories.name | lowercase]">{{categories.name}}</a></li>	
+</ul>
+</div>
+
+
+					<ul class="social">
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    </ul>
+<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div>
+     
+    </div>
+<div class="site-inner">
+	<app-articles></app-articles>
+</div>
+
+</div>
+
+
+ <footer class="site-footer">
+<p class="copiright">Copyright© 2018. All rights reserved.</p>
+                </footer>
+                </div>
+
+ 
+
+
+
+
+
+
+

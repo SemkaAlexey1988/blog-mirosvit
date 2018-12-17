@@ -1,0 +1,155 @@
+/* constants */
+
+$font_size: 38px;
+$top_panel: 40px;
+
+
+/* styles */
+
+h1 {
+font-size: $font_size;	
+}
+
+.top-panel {
+background: #506278;	
+width: 100%;
+height: $top_panel;
+}
+
+.social {
+list-style-type: none;
+margin-bottom: 0;
+line-height: $top_panel;
+}
+
+.social li {
+display: inline-block;
+vertical-align: top;
+}
+
+.social li a {
+margin-right: 8px;
+display: block;
+}
+
+.social li a .fab {
+color: #FFFFFF;
+font-size: 18px;
+}
+.social li a .fab:hover {
+color: #dadfe2;
+}
+
+.top-nav {
+margin-bottom: 0;
+list-style-type: none;
+width: auto;
+display: block;
+}
+
+.top-nav li {
+width: auto;
+display: block;
+max-width: 170px;
+}
+
+.top-nav li a {
+color: #FFFFFF;
+display: block;
+padding: 0 15px;
+border-left: 1px solid #43546e;
+border-right: 1px solid #43546e;
+line-height: 40px;
+width: auto;
+text-align: center;
+-webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+}
+
+.top-nav li a:hover {
+text-decoration: none;
+background: #43546e;
+}
+
+.breadcrumbs__list {
+	list-style-type: none;
+}
+
+.breadcrumbs__list li {
+	display: inline-block;
+	vertical-align: top;
+}
+.mobile-menu{
+	display: none;
+	position: absolute;
+list-style-type: none;
+background: #FFFFFF;
+padding: 15px;
+z-index: 9;
+border: 1px solid #747478;
+border-radius: 5px;
+top: 30px;
+}
+.mobile-menu_toggle {
+	display: none;
+}
+
+ @media screen and (min-width:300px) and (max-width:767px) {
+
+ header {
+    position: fixed;
+    z-index: 9;
+}
+.site-inner {
+	padding-top: 40px;
+}
+
+.mobile-menu_toggle {
+	display: block;
+	width: 16px;
+line-height: 40px;
+display: inline-block;
+    vertical-align: top;
+    float: left;
+}
+
+
+.mobile-menu_toggle .fas {
+color: #FFFFFF;
+cursor: pointer;
+}
+.mobile-menu a {
+color: #2e343a;
+text-decoration: underline;
+}
+
+.social {
+
+    list-style-type: none;
+    margin-bottom: 0;
+    line-height: 40px;
+    width: calc(100% - 20px);
+    display: inline-block;
+    vertical-align: top;
+   text-align: right;
+
+}
+.clear {
+	clear: both;
+}
+
+.mobile-menu.activeited{
+	display: block;
+}
+
+.mobile-menu.disabled{
+	display: none;
+}
+
+.top-nav {
+display: none;	
+}
+.left-menu {
+display: none;	
+}
+ }
