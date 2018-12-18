@@ -7,7 +7,7 @@ export class ArticlesService {
 constructor(private http: Http){}
 
 
-url:string = 'http://example/wp-json/wp/v2';
+url:string = 'http://example.com/wp-json/wp/v2';
 
 
 getArticlesList(){
